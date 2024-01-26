@@ -25,9 +25,9 @@ export function Home(){
     }, [])
 
     return !isLoading ? (
-        <>
-        <Header/>
-        <div style={{display: "flex", flexWrap:'wrap'}}>
+        <div style={{backgroundColor:'#f5f5f5'}}>
+            <Header/>
+        <div style={{display: "flex", flexWrap:'wrap', backgroundColor:'white', marginLeft:300, marginRight:300, marginTop:20, borderRadius:15}}>
         {dogsData && dogsData.map((dog, index) => (
                     <div style={{width: '50%', padding: 10, boxSizing:"border-box"}} key={index}>
                         <h2>{dog.name}</h2>
@@ -43,13 +43,11 @@ export function Home(){
                     </div>
                 ))}
         </div>
-       </>
+       </div>
     ) : (
         <div>
             <p>Loading...</p>
         </div>
     )
-
-    
 }
 

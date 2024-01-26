@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Header{
+  color:  white;
+  padding: 10px;
+  background-Color: #002f34;
+}
+
 
 .App-link {
   color: #61dafb;
