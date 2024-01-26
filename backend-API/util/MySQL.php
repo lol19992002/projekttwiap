@@ -10,11 +10,8 @@
         /////////////////////////////////////////////////////
         /// Constructor
         public function __construct() {
-            $this->conn = new mysqli($this->host, $this->user, $this->password, $this->database);
-
-            if ($this->conn->connect_error) {
-                die("Connection failed: " . $this->conn->connect_error);
-            }
+            $this->conn = new mysqli($this->host, $this->user, $this->password, $this->database) or
+                            die("Connection failed: " . $this->conn->connect_error);
 
             $this->conn->set_charset("utf8");
         }
@@ -37,7 +34,7 @@
                         $data[] = $row;
                     }
                 }
-            } catch (Exception $e) {
+            } catch (Exception) {
                 // echo "Error: " . $e->getMessage();
                 return false;
             }
